@@ -31,9 +31,6 @@ def Burn_Baby_Burn(fire): #Interrupt handler will run when irq conditions are me
         print("fired")
         pwm.duty_u16(0) #Turn off the burner
         
-    #elif (Drop_Pin.value()==1) and (fired_state==1): #if pull pin is high and fired state is high/fired then do nothing. 
-        #pwm.duty_u16(0)
-
 
 
 Drop_Pin = machine.Pin(15,machine.Pin.IN,machine.Pin.PULL_DOWN) #Create an object for our pull pin switch change of state
