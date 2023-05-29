@@ -21,7 +21,7 @@ def Burn_Baby_Burn(fire): #Interrupt handler will run when irq conditions are me
     global fired_state	#reference the value of fired_state (check if we have fired before)
     Drop_Pin.irq(handler=None) # Turn off the handler while it is executing avoid bounce
    
-    if (Drop_Pin.value()==1) and (fired_state==0):#pull pin is high and fired state is zero/unfired
+    if fired_state==0:#pull pin is high and fired state is zero/unfired
         #pwm.duty_u16(0)
         sleep(2) #duration between pin pulled and burner firing in seconds
         pwm.duty_u16(65025) #PWM value which defines how much current can flow/how hot the burner becomes. Expects a value between 0 and 65025
