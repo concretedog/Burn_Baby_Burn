@@ -11,6 +11,7 @@ from time import sleep
 pwm = PWM(Pin(0,pull=Pin.PULL_DOWN)) #set up GPIO pin 0 as a PWM pin initialising it pulled low
 
 pwm.freq(500) #Set PWM Frequency, 500 has tested as fine. 
+pwm.duty_u16(0) #Set initial duty cycle at zero
 
 fired_state=0 #Initialise a variable set to zero
 
@@ -30,8 +31,8 @@ def Burn_Baby_Burn(fire): #Interrupt handler will run when irq conditions are me
         print("fired")
         pwm.duty_u16(0) #Turn off the burner
         
-    elif (Drop_Pin.value()==1) and (fired_state==1): #if pull pin is high and fired state is high/fired then do nothing. 
-        pwm.duty_u16(0)
+    #elif (Drop_Pin.value()==1) and (fired_state==1): #if pull pin is high and fired state is high/fired then do nothing. 
+        #pwm.duty_u16(0)
 
 
 
