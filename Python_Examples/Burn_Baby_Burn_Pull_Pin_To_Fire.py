@@ -26,7 +26,6 @@ def Burn_Baby_Burn(Fire):        # scheduled by the IRQ to do the relatively lon
    
     if FIRED_STATE==0:       # only burn if previously unfired
         FIRED_STATE = 1      # prevent retriggers
-        #pwm.duty_u16(0)
         sleep(2)             # delay between pin pull and burner firing in seconds
         pwm.duty_u16(65025)  # PWM value which defines how much current can flow/how hot the burner becomes. Expects a value between 0 and 65025
         print("firing")
