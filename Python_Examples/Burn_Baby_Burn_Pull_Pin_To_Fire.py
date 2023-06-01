@@ -21,7 +21,7 @@ def Baby_IRQ(pin):
     pin.irq(handler=None)    # Turn off the handler, avoiding bounce, first rising edge is sufficient.
     schedule(Burn_Baby_Burn,None) # Schedule the long running stuff to happen soon.
 
-def Burn_Baby_Burn(Fired_State):        # scheduled by the IRQ to do the relatively long running stuff outside the contraints of interrupt handler.
+def Burn_Baby_Burn(Fire):        # scheduled by the IRQ to do the relatively long running stuff outside the contraints of interrupt handler.
     global FIRED_STATE
    
     if FIRED_STATE==0:       # only burn if previously unfired
