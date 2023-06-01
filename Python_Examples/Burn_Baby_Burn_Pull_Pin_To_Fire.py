@@ -1,4 +1,6 @@
 """
+    Code graciously contributed by Ehler. 
+    
     GPIO pin 0 is connected to the "s" signal pin on the "Burn Baby Burn".
     A pull pin switch (remove pin to make) is tied between the pulled low GPIO pin 15 on the RP2040 and the positive rail.
     Note that one of the - connections on the "Burn Baby Burn" needs to be connected to the RP2040/Pico GND rail.
